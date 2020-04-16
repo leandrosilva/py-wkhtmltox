@@ -43,3 +43,10 @@ extension.
 If you want to re-generate C source (or have made changes to the Cython template file, .pyx) you need Cython (tested with 0.13):
 
     $ easy_install cython
+
+### Docker
+
+    $ docker build -f Dockerfile --target "dev" -t "py-wkhtmltox:dev" .
+    $ docker run -it -v $PWD/:/code/ --name pywk_dev py-wkhtmltox:dev bash
+    $ docker start pywk_dev
+    $ docker container exec -it pywk_dev bash
